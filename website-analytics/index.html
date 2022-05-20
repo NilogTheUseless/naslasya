@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Find Analytics data...</title>
+</head>
+<body>
+	<img id="favicon"/>
+	<input type="url" placeholder="Find website analytics..." id="url" autocomplete="off" />
+	<script>
+		var icon = document.getElementById("favicon")
+		var url = document.getElementById("url")
+		
+		url.addEventListener("keydown",()=>{
+			const favicon = `https://s2.googleusercontent.com/s2/favicons?domain_url=${url.value}`
+			icon.src = favicon
+		})
+
+		$("url").on('keyup', function (e) {
+    			if (e.key === 'Enter' || e.keyCode === 13) {
+				var newUrl = "index.html#" + "url";
+				location.href = 'newURL';
+   			}
+		});
+	</script>
+</body>
+</html>
