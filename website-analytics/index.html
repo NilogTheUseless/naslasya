@@ -5,13 +5,24 @@
 <body>
 	<img id="favicon"/>
 	<input type="url" placeholder="Find website analytics..." id="url" autocomplete="off" />
+	<img src="search.png" style="height:600px;width:800px;"/>
 	<script>
+		npm i url-to-screenshot
 		var icon = document.getElementById("favicon")
 		var url = document.getElementById("url")
 		
 		url.addEventListener("keydown",()=>{
 			const favicon = `https://s2.googleusercontent.com/s2/favicons?domain_url=${url.value}`
 			icon.src = favicon
+			const Screenshot = require('url-to-screenshot')
+			const fs = require('fs')
+			
+			new Screenshot('url')
+				.width(800)
+				.height(600)
+				.capture()
+				.then(img=>
+				      fs.writeFileSync(`${__dirname}/search.png`, img)
 		})
 
 		input.addEventListener("keypress", function(event) {
