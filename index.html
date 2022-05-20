@@ -1,86 +1,25 @@
 <html>
 <head>
-<title>Наслася</title>
-<style>
-  @font-face {
-    font-family: 'Interstate-thin';
-    src: url('fonts/Interstate-thin.otf'),
-  }
-  
-  body {
-    margin: 0;
-    background: #dedede;
-    font-family: 'Interstate-thin', Interstate-thin;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  header {
-    background: #c47474;
-  }
-  
-  nav {
-    float: right;
-    padding: 0 10px;
-  }
-  
-  header::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-  
-  nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-left: 70px;
-    padding-top: 23px;
-    position: relative;
-  }
-  
-  nav a {
-    color: #222;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-  nav a:hover {
-    color: #ddd;
-  }
-  
-  nav a::before {
-    content: '';
-    background-color: #222;
-    transition: all ease-in-out 250ms;
-  }
-  
-
-</style>
+	<title>Find Analytics data...</title>
 </head>
 <body>
-<header>
-  <div class="container">
-    <nav>
-      <ul>
-        <li><a href="https://nilogtheuseless.github.io/naslasya/index.html">Главный</a></li>
-        <li><a href="https://nilogtheuseless.github.io/naslasya/">Неполный</a></li>
-        <li><a href="https://nilogtheuseless.github.io/naslasya/">..........</a></li>
-        <li><a href="https://nilogtheuseless.github.io/naslasya/">Простите</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-...
-<h1>Что ж это неловко...</h1>
-<p>Хотя я все еще пытаюсь понять, что я вообще делаю с этим, а также в чем весь смысл, вы ничего не можете с этим поделать прямо сейчас. Сейчас в его существовании нет смысла, но тогда, в конце концов, оно станет полноценным.</p>
-<img src="img/naslasya_logo_20220513.png" alt="logo" class="logo">
+	<img id="favicon"/>
+	<input type="url" placeholder="Find website analytics..." id="url" autocomplete="off" />
+	<script>
+		var icon = document.getElementById("favicon")
+		var url = document.getElementById("url")
+		
+		url.addEventListener("keydown",()=>{
+			const favicon = `https://s2.googleusercontent.com/s2/favicons?domain_url=${url.value}`
+			icon.src = favicon
+		})
+
+		$("url").on('keyup', function (e) {
+    			if (e.key === 'Enter' || e.keyCode === 13) {
+				var newUrl = "index.html#" + "url";
+				location.href = 'newURL';
+   			}
+		});
+	</script>
 </body>
 </html>
