@@ -14,8 +14,8 @@
 			icon.src = favicon
 		})
 
-		$("#url").on('keyup', function (e) {
-    			if (e.key === 'Enter' || e.keyCode === 13) {
+		input.addEventListener("keypress", function(event) {
+			if (event.key === "Enter") {
 				var newUrl = "index.html#" + "url";
 				location.href = 'newURL';
    			}
